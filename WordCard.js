@@ -2,7 +2,7 @@ import React from 'react';
 import _ from 'lodash'; 
 import CharacterCard from './CharacterCard';
 
-const activationHandler = c => { console.log(`${c} has been activated.`) } 
+//const activationHandler = c => { console.log(`${c} has been activated.`) } 
 
 export default function WordCard(props){ 
     return ( 
@@ -30,15 +30,15 @@ const activationHandler = (c) => {
   console.log(`${c} has been activated.`) 
 
   let guess = state.guess + c 
-  setState({...state, guess})     
+  setState({state, guess})     
 
   if(guess.length == state.word.length){       
-    if(guess == state.word){ 
+    if(guess == state.word){ //เดาคำถูก
       console.log('yeah!') 
-      setState({...state, guess: '', completed: true}) 
-    }else{ 
+      setState({state, guess: '', completed: true}) 
+    }else{ //เดาไม่ถูก
       console.log('reset') 
-      setState({...state, guess: '', attempt: state.attempt + 1}) 
+      setState({state, guess: '', attempt: state.attempt + 1}) 
     } 
   }     
 }
