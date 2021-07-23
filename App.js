@@ -23,11 +23,13 @@ import './App.css';
 //   );
 // }
 import CharacterCard from './CharacterCard'; 
+const word = "Hello"; 
 function App() { 
   return ( 
     <div> 
-      <CharacterCard value="h"/> 
-      <CharacterCard value="i"/> 
+      { 
+         Array.from(word).map((c, i) => <CharacterCard value={c} key={i}/>) 
+      } 
     </div> 
   ); 
 }
