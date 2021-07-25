@@ -20,7 +20,7 @@ const prepareStateFromWord = (given_word) => {
 
 export default function WordCard(props){ 
   
-  const [state,setState] = useState(prepareStateFromWord(props.value))
+  let [state,setState] = useState(prepareStateFromWord(props.value))
 
   const activationHandler = (c) => { 
     console.log(`${c} has been activated.`) 
@@ -32,10 +32,12 @@ export default function WordCard(props){
       if(guess == state.word){ //เดาคำถูก
         console.log('yeah!') 
         setState({ ...state ,  guess: '', completed: true}) 
-        alert('You win!')  
+        alert('You win!')
+        
       }else{ //เดาไม่ถูก
         console.log('reset') 
         setState({ ...state ,  guess: '', attempt: state.attempt + 1}) 
+        alert('You lose')
       } 
     }     
   }
