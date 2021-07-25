@@ -37,7 +37,7 @@ export default function WordCard(props){
       }else{ //เดาไม่ถูก
         console.log('reset') 
         setState({ ...state ,  guess: '', attempt: state.attempt + 1}) 
-        alert('You lose')
+        alert('try again!')
       } 
     }     
   }
